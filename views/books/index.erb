@@ -1,1 +1,9 @@
-<h1>Library</h1>
+<h1>Library index</h1>
+
+<% @books.each do |books| %>
+    <div>
+        <h3><a href="/<%= books.id %>"><%= books.title %></a></h3>
+        <h5><%= books.author %></h5>
+        <p><<%= books.description %></p>
+    </div>
+<% end %>

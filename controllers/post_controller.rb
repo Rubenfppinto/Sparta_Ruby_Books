@@ -9,10 +9,13 @@ class PostController<Sinatra::Base
     end
 
     get "/" do
+        @books = Book.all
         erb :'books/index'
     end
 
-
+    get "/new" do
+        erb :'books/new'
+    end
 
 
 
