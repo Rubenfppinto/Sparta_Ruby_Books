@@ -36,6 +36,12 @@ class Book
         conn.exec(sql)
     end
 
+    def destroy
+        conn = Book.open_connection
+        sql = "DELETE FROM book WHERE id = #{self.id}"
+        conn.exec(sql)
+    end
+
     def self.hydrate book_data
         book = Book.new
         book.id = book_data['id']

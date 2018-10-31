@@ -14,6 +14,7 @@ class PostController<Sinatra::Base
     end
 
     get "/new" do
+        @book = Book.new
         erb :'books/new'
     end
 
@@ -45,6 +46,13 @@ class PostController<Sinatra::Base
         book.author = params[:author]
         book.description = params[:description]
         book.save
+        redirect '/'
+    end
+
+    delete '/:id' do
+        id = params[:id]
+        book = Book.find id
+        book.destroy
         redirect '/'
     end
 end
