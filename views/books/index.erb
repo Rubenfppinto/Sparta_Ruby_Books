@@ -3,8 +3,8 @@
 
 <% @books.each do |books| %>
     <div>
-        <h3><a href="/<%= books.id %>"><%= books.title %></a></h3>
-        <h5><%= books.author %></h5>
+        <h2><a href="/<%= books.id %>"><%= books.title %></a></h2>
+        <h4><%= books.author %></h4>
         <p><%= books.description %></p>
     </div>
 <% end %>
